@@ -69,7 +69,10 @@ function createPeersLocations (opts) {
       const address = peer.addr.toString()
       const latency = parseLatency(peer.latency)
       const direction = peer.direction
-      const { isPrivate, isNearby } = await isPrivateAndNearby(peer.addr, identity)
+      const {
+        isPrivate,
+        isNearby
+      } = await isPrivateAndNearby(peer.addr, identity)
 
       const protocols = (Array.isArray(peer.streams)
         ? Array.from(new Set(peer.streams
@@ -91,7 +94,7 @@ function createPeersLocations (opts) {
         isPrivate,
         isNearby
       }
-    }))
+    }).filter(el => el.isPrivate))
   )
 
   const COORDINATES_RADIUS = 4
@@ -102,7 +105,10 @@ function createPeersLocations (opts) {
       if (!peers) return []
 
       const fetchedPeers = await peers
-      return fetchedPeers.reduce((previous, { peerId, coordinates }) => {
+      return fetchedPeers.reduce((previous, {
+        peerId,
+        coordinates
+      }) => {
         if (!coordinates) return previous
 
         let hasFoundACloseCoordinate = false
@@ -128,7 +134,10 @@ function createPeersLocations (opts) {
           return previousCoordinates
         }
 
-        return [...previousCoordinates, { peerIds: [peerId], coordinates }]
+        return [...previousCoordinates, {
+          peerIds: [peerId],
+          coordinates
+        }]
       }, [])
     }
   )
@@ -140,7 +149,10 @@ const isNonHomeIPv4 = t => t[0] === 4 && t[1] !== '127.0.0.1'
 
 const toLocationString = loc => {
   if (!loc) return null
-  const { country_name: country, city } = loc
+  const {
+    country_name: country,
+    city
+  } = loc
   return city && country ? `${country}, ${city}` : country
 }
 
@@ -190,7 +202,10 @@ const isPrivateAndNearby = async (maddr, identity) => {
     // Might explode if maddr does not have an IP or cannot be converted
     // to a node address. This might happen if it's a relay. We do not print
     // or handle the error, otherwise we would get perhaps thousands of logs.
-    return { isPrivate, isNearby }
+    return {
+      isPrivate,
+      isNearby
+    }
   }
 
   // At this point, addr.address and publicIP must be valid IP addresses. Hence,
@@ -207,7 +222,10 @@ const isPrivateAndNearby = async (maddr, identity) => {
     }
   }
 
-  return { isPrivate, isNearby }
+  return {
+    isPrivate,
+    isNearby
+  }
 }
 
 class PeerLocationResolver {
@@ -301,4 +319,5 @@ class PeerLocationResolver {
     return peers
   }
 }
+
 export default createPeersLocations

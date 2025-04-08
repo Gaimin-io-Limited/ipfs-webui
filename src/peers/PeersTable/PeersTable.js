@@ -140,15 +140,10 @@ export const PeersTable = ({ className, t, peerLocationsForSwarm, selectedPeers 
   const filteredPeerList = useMemo(() => {
     const filterLower = filter.toLowerCase()
 
-    const kuboPeers = awaitedPeerLocationsForSwarm.filter((el) => {
-      console.log('el', el)
-      return el.identify?.agentVersion === 'kubo/0.32.1/'
-    })
-
-    if (filterLower === '') return kuboPeers
+    if (filterLower === '') return awaitedPeerLocationsForSwarm
 
     // Then apply other filters to kubo peers
-    return kuboPeers.filter(({ location, latency, peerId, connection, protocols }) => {
+    return awaitedPeerLocationsForSwarm.filter(({ location, latency, peerId, connection, protocols }) => {
       if (location != null && location.toLowerCase().includes(filterLower)) {
         return true
       }
