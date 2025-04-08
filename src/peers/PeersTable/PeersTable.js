@@ -139,8 +139,16 @@ export const PeersTable = ({ className, t, peerLocationsForSwarm, selectedPeers 
 
   const filteredPeerList = useMemo(() => {
     const filterLower = filter.toLowerCase()
-    if (filterLower === '') return awaitedPeerLocationsForSwarm
-    return awaitedPeerLocationsForSwarm.filter(({ location, latency, peerId, connection, protocols }) => {
+
+    const kuboPeers = awaitedPeerLocationsForSwarm.filter((el) => {
+      console.log('el', el)
+      return el.identify?.agentVersion === 'kubo/0.32.1/'
+    })
+
+    if (filterLower === '') return kuboPeers
+
+    // Then apply other filters to kubo peers
+    return kuboPeers.filter(({ location, latency, peerId, connection, protocols }) => {
       if (location != null && location.toLowerCase().includes(filterLower)) {
         return true
       }
@@ -150,7 +158,6 @@ export const PeersTable = ({ className, t, peerLocationsForSwarm, selectedPeers 
       if (peerId != null && peerId.toString().includes(filter)) {
         return true
       }
-      console.log('connection: ', connection)
       if (connection != null && connection.toLowerCase().includes(filterLower)) {
         return true
       }
