@@ -24,8 +24,8 @@ jobs:
       - name: Build WebUI
         run: npm run build
 
-      - name: Deploy to Web Directory
+      - name: Copy built files to nginx webroot
         run: |
           sudo rm -rf /var/www/ipfs-webui
           sudo mkdir -p /var/www/ipfs-webui
-          sudo cp -r dist/* /var/www/ipfs-webui/
+          sudo cp -r build/* /var/www/ipfs-webui/
