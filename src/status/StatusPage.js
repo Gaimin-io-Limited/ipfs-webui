@@ -7,7 +7,9 @@ import StatusConnected from './StatusConnected.js'
 import BandwidthStatsDisabled from './BandwidthStatsDisabled.js'
 import IsNotConnected from '../components/is-not-connected/IsNotConnected.js'
 import NodeInfo from './NodeInfo.js'
+/*
 import NodeInfoAdvanced from './NodeInfoAdvanced.js'
+*/
 import NodeBandwidthChart from './NodeBandwidthChart.js'
 import NetworkTraffic from './NetworkTraffic.js'
 import Box from '../components/box/Box.js'
@@ -42,7 +44,7 @@ const StatusPage = ({
                 <StatusConnected />
                 <NodeInfo />
                 <div className='pt2'>
-                  <NodeInfoAdvanced />
+                 {/* <NodeInfoAdvanced /> */}
                 </div>
               </div>
                 )
