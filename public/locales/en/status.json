@@ -3,14 +3,14 @@
   "nodeInfo": "Node info",
   "spaceUsed": "Space used",
   "networkTraffic": "Network traffic",
-  "bandwidthOverTime": "Bandwidth over time",
+  "bandwidthOverTime": "Bandwidth between GMEs",
   "bandwidthByPeer": "Bandwidth by peer",
   "distributionOfPeers": "Distribution of peers",
   "pieChartLabel": "{count, plural, one {{percent}% ({count} Peer)} other {{percent}% ({count} Peers)}}",
   "countMore": "...and {count} more",
   "StatusConnected": {
-    "repoSize": "Hosting {repoSize} of data",
-    "peersCount": "{peersCount, plural, one {Discovered 1 peer} other {Discovered {peersCount} peers}}"
+    "repoSize": "Storing and Sharing {repoSize} of data",
+    "peersCount": "{peersCount, plural, one {Discovered 1 peer (Public peer & GME)} other {Discovered {peersCount} peers (Public peers & GME)}}"
   },
   "customApiConfig": "Custom JSON configuration",
   "AnalyticsBanner": {
