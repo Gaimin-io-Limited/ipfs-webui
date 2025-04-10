@@ -4,10 +4,7 @@ import { withTranslation } from 'react-i18next'
 import classnames from 'classnames'
 import ipfsLogoTextVert from './ipfs-logo-text-vert.svg'
 import StrokeMarketing from '../icons/StrokeMarketing.js'
-import StrokeWeb from '../icons/StrokeWeb.js'
 import StrokeCube from '../icons/StrokeCube.js'
-import StrokeSettings from '../icons/StrokeSettings.js'
-import StrokeIpld from '../icons/StrokeIpld.js'
 
 // Styles
 import './NavBar.css'
