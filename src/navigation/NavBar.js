@@ -64,10 +64,10 @@ export const NavBar = ({ t }) => {
         </a>
         <div className='db overflow-x-scroll overflow-x-hidden-l nowrap tc' role='menubar'>
           <NavLink to='/' alternative="status" icon={StrokeMarketing}>{t('status:title')}</NavLink>
-          <NavLink to='/files' icon={StrokeWeb}>{t('files:title')}</NavLink>
-          <NavLink to='/explore' icon={StrokeIpld}>{t('explore:tabName')}</NavLink>
+          {/* <NavLink to='/files' icon={StrokeWeb}>{t('files:title')}</NavLink> */}
+          {/* <NavLink to='/explore' icon={StrokeIpld}>{t('explore:tabName')}</NavLink> */}
           <NavLink to='/peers' icon={StrokeCube}>{t('peers:title')}</NavLink>
-          <NavLink to='/settings' icon={StrokeSettings}>{t('settings:title')}</NavLink>
+          {/* <NavLink to='/settings' icon={StrokeSettings}>{t('settings:title')}</NavLink> */}
         </div>
       </div>
       <div className='dn db-l navbar-footer mb2 tc center f7 o-80 glow'>
