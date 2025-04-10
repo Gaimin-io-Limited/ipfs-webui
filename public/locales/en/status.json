@@ -10,7 +10,7 @@
   "countMore": "...and {count} more",
   "StatusConnected": {
     "repoSize": "Storing and Sharing {repoSize} of data",
-    "peersCount": "{peersCount, plural, one {Discovered 1 peer (Public peer & GME)} other {Discovered {peersCount} peers (Public peers & GME)}}"
+    "peersCount": "{peersCount, plural, one {Discovered 1 peer (Public peer & GME)} other {Discovered {peersCount} peers (Public peers & GMEs)}}"
   },
   "customApiConfig": "Custom JSON configuration",
   "AnalyticsBanner": {
