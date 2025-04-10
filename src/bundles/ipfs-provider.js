@@ -152,8 +152,11 @@ const init = () => {
  * @returns {HTTPClientOptions|string|null}
  */
 const readAPIAddressSetting = () => {
-  const setting = readSetting('ipfsApi')
-  return setting == null ? null : asAPIOptions(setting)
+  // hardcoded to ipfs.gaimin.gg
+  return "https://ipfs.gaimin.gg/"
+
+ /* const setting = readSetting('ipfsApi')
+  return setting == null ? null : asAPIOptions(setting)*/
 }
 
 /**
