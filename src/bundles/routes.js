@@ -3,6 +3,7 @@ import StatusPage from '../status/LoadableStatusPage.js'
 import PinsPage from '../pins/LoadablePinsPage.js'
 import WelcomePage from '../welcome/LoadableWelcomePage.js'
 import BlankPage from '../blank/BlankPage.js'
+import PeersPage from '../peers/LoadablePeersPage.js'
 
 export default createRouteBundle({
   /* '/explore': ExplorePageRenderer,
@@ -11,7 +12,7 @@ export default createRouteBundle({
   '/ipfs*': FilesPage,
   '/ipns*': FilesPage, */
   '/pins*': PinsPage,
-  /* '/peers': PeersPage, */
+  '/peers': PeersPage,
   /* '/settings/analytics': AnalyticsPage,
   '/settings*': SettingsPage, */
   '/welcome': WelcomePage,
